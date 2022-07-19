@@ -1,3 +1,13 @@
+<!-- ngIf -->
+<h1>ngIf</h1>
+<input type="text" required [(ngModel)]="person.name" />
+<p *ngIf="person.name === 'cristian'">Soy cristian</p>
+<p *ngIf="person.name === 'javier' && person.age === 18; else myBlock">Soy javier</p> <!-- Para instanciar el else se declara un template a parte -->
+<ng-template #myBlock>
+  <p>Bloque else</p>
+</ng-template>
+<hr>
+<!-- NgModel -->
 <h1>NgModel</h1>
 <p>Nombre {{ person.name }}</p>
 <input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
@@ -6,6 +16,7 @@
 <input type="number" max="18" min="10" required #ageInput="ngModel" [(ngModel)]="person.age" />
 <p>Valid: {{ ageInput.valid }}</p>
 <hr/>
+<!-- Events binding -->
 <h1>Eventos</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <button (click)="toggleButton()">Toggle Button</button>
@@ -17,6 +28,7 @@
 <p>Nombre {{ person.name }}</p>
 <input type="text" [value]="person.name" (keyup)="changeName($event)" />
 <hr/>
+<!-- Property binding -->
 <h1>Propiedades</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <input type="text" [value]="person.name" />

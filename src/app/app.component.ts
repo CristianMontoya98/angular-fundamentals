@@ -21,7 +21,7 @@ export class AppComponent {
   }
 
   increaseAge() {
-    this.person.age += 1;
+    this.person.age ++;
   }
 
   onScroll(event: Event) {
