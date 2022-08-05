@@ -17,6 +17,23 @@ export class AppComponent {
   }
   names: string[] = ['Jesus', 'Jose', 'Amalia'];
   newName = '';
+  products: any[] = [
+    {
+      name: 'El mejor juguete',
+      price: 500,
+      image: '../assets/img/toy.jpg'
+    },
+    {
+      name: 'Bicicleta casi nueva',
+      price: 400,
+      image: '../assets/img/bike.jpg'
+    },
+    {
+      name: 'Colección de albumes',
+      price: 500,
+      image: '../assets/img/album.jpg'
+    }
+  ];
   toggleButton() {
     this.btnDisabled = !this.btnDisabled;
   }

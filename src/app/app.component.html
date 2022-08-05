@@ -1,3 +1,14 @@
+<!-- ngFor Objs -->
+<hr>
+<h2>*ngFor en array de objs</h2>
+<div>
+  <div *ngFor="let product of products">
+    <h2>{{product.name}}</h2>
+    <img width="250" [src]="product.image" alt="image">
+    <h2>Precio: {{product.price}}</h2>
+  </div>
+</div>
+<hr>
 <!-- ngFor -->
 <h1>*ngFor</h1>
 
