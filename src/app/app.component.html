@@ -1,6 +1,17 @@
-<!-- ngSwitch -->
-<input type="text" required [(ngModel)]="person.name" />
 
+
+<div class="imgWidth">
+  <div>
+  <input type="text" [(ngModel)]="widthImg">
+  </div>
+  <div>
+    <img [src]="person.avatar" alt="avatar" [style.width.px]="widthImg">
+  </div>
+</div>
+
+<!-- ngSwitch -->
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name" />
+<p class="message-error" [class.invalid]="nameInput2.invalid" [style.font-style]="nameInput2.invalid ? 'italic':'normal'">El campo es requerido</p>
 <!-- <p *ngIf="person.name === 'pepe'">
   Pepito si señor
 </p>
@@ -22,8 +33,7 @@
 <hr />
 <h2>*ngFor en array de objs</h2>
 <div class="products--grid">
-  <div *ngFor="let product of products">
-    
+  <div class="card" *ngFor="let product of products">
     <img [src]="product.image" alt="image" />
     <h2>${{ product.price }}</h2>
     <p>{{ product.name }}</p>
